@@ -1,0 +1,46 @@
+
+<title>Prijava</title>
+
+<!--<div id="poruka">#poruka#</div>-->
+
+<div id="javi_gresku"></div>
+
+
+<form action="/prijava" method="POST" id="forma_prijava">
+
+
+    <h1 class="text-white">Prijavite se u aplikaciju</h1>
+
+
+    <h6 class="">Korisničko ime</h6>
+
+    <input type="text" name="korime" id="korime" class="ime_txt" [(ngModel)]="korime" />
+
+
+
+    <h6 class="">Lozinka</h6>
+
+    <input type="text" name="lozinka" id="lozinka" class="prezime_txt" [(ngModel)]="lozinka" />
+
+
+    <input type="submit" value="Prijavi se" id="gumb_prijavi" (click)="login()" />
+<!--  <re-captcha (resolved)="resolved($event)" [siteKey]="'6LeU888jAAAAAKnmdRMfiS9aTl3z8PZCqJdQtntl'"></re-captcha>-->  
+
+
+
+</form>
+
+<p><b>PODACI ZA PRIJAVU:</b></p>
+
+<p>administrator: korime:administrator, lozinka:rwa
+</p>
+<p>korisnik: korime:obican, lozinka:rwa
+</p>
+
+
+<a
+    href="http://validator.w3.org/check?uri=https://spider.foi.hr/RWA/2022/zadaca_01/mfriscic20/aplikacija/html/prijava.html">
+    <img class="validacija_css" src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png" width="50" height="35"
+        alt="validator" />
+</a>
+

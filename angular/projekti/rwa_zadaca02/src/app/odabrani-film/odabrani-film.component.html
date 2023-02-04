@@ -1,0 +1,90 @@
+<div id="glavni">
+
+
+<div class="svi_inputi">
+
+  <div class="prvih_11">
+
+    <label for="naziv_filma"><b>Naziv filma</b></label> <br>
+    <input type="text" placeholder="Naziv filma" name="naziv_filma" id="naziv_filma" value={{film.title}}><br>
+
+    <label for="id_filma"><b>ID filma</b></label><br>
+    <input type="text" name="id_filma" id={{film.id}}><br>
+
+
+    <label for="adult"><b>Adult:</b></label><br>
+    <input type="text" name="adult" id="adult" value={{film.adult}}><br>
+
+    <label for="backdrop_path"><b>Backdrop path</b></label><br>
+    <input type="text" name="backdrop_path" id="backdrop_path" value={{film.backdrop_path}}><br>
+
+    <label for="budget"><b>Budžet</b></label><br>
+    <input type="text" name="budget" id="budget" value={{film.budget}}><br>
+
+    <label for="date_added"><b>Datum dodavanja</b></label><br>
+    <input type="text" name="date_added" id="date_added" value={{film.date_added}}><br>
+
+    <label for="homepage"><b>Homepage</b></label><br>
+    <input type="text" name="homepage" id="homepage" value={{film.homepage}}><br>
+
+    <label for="imdb_id"><b>IMDB_ID</b></label><br>
+    <input type="text" name="imdb_id" id="imdb_id" value={{film.imdb_id}}><br>
+
+    <label for="original_language"><b>Originalni jezik</b></label><br>
+    <input type="text" name="original_language" id="original_language" value={{film.original_language}}><br>
+
+    <label for="original_title"><b>Originalni naslov</b></label><br>
+    <input type="text" name="original_title" id="original_title" value={{film.original_title}}><br>
+
+    <label for="overview"><b>Overview</b></label><br>
+    <input type="text" name="overview" id="overview" value={{film.overview}}><br>
+
+  </div>
+
+  <div class="drugih_11">
+
+    <label for="popularity"><b>Popularnost</b></label><br>
+    <input type="text" name="popularity" id="popularity" value={{film.popularity}}><br>
+
+    <label for="poster_path"><b>Putanja do postera</b></label><br>
+    <input type="text" name="poster_path" id="poster_path" value={{film.poster_path}}><br>
+
+    <label for="release_date"><b>Datum prve premijere</b></label><br>
+    <input type="text" name="release_date" id="release_date" value={{film.release_date}}><br>
+
+    <label for="revenue"><b>Revenue</b></label><br>
+    <input type="text" name="revenue" id="revenue"value={{film.revenue}}><br>
+
+    <label for="runtime"><b>Runtime</b></label><br>
+    <input type="text" name="runtime" id="runtime" value={{film.runtime}}><br>
+
+    <label for="status"><b>Status</b></label><br>
+    <input type="text" name="status" id="status" value={{film.status}}><br>
+
+    <label for="tagline"><b>Tagline</b></label><br>
+    <input type="text" name="tagline" id="tagline" value={{film.tagline}}><br>
+
+   
+
+    <label for="video"><b>Video</b></label><br>
+    <input type="text" name="video" id="video" value={{film.video}}><br>
+
+    <label for="vote_average"><b>Vote average</b></label><br>
+    <input type="text" name="vote_average" id="vote_average" value={{film.vote_average}}><br>
+
+    <label for="vote_count"><b>Vote count</b></label><br>
+    <input type="text" name="vote_count" id="vote_count" value={{film.vote_count}}><br>
+  </div>
+
+  <div class="div_slike">
+
+    <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+        film.poster_path
+      }}" alt="slika od filma" id="sslika" />
+    
+    </div>
+
+</div>
+
+</div>
+

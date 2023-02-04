@@ -1,0 +1,19 @@
+{
+  "name": "aplikacija",
+  "version": "1.0.0",
+  "description": "package json aplikacija",
+  "main": "appServer.js",
+  "scripts": {
+    "start": "node appServer.js ../konfiguracija.csv",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aplikacija"
+  ],
+  "author": "Martin Friscic",
+  "license": "GPL-2.0-only",
+  "dependencies": {
+  
+  }
+ 
+}

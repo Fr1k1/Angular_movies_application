@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/css_ostalo.css">
+
+    <title>Žanrovi</title>
+</head>
+
+<body>
+    <nav>#navigacija#</nav>
+
+    <h1>Žanrovi</h1>
+
+    <p>Gumb dodaj žanr u bazu dodaje neki od filmova iz TMDB baze u moju bazu,
+        gumb ažuriraj žanr dohvaća naziv označenog radio buttona (žanrovi iz moje baze),
+        a gumb pošalji ažurirani žanr šalje novu tekstualnu vrijednost žanra u moju bazu
+    </p>
+    <main></main>
+
+    <div id="prikaz_mojih_zanrova"></div>
+
+    <button id="dohvati_zanrove">Dohvati žanrove iz TMDB</button>
+
+    <button id="moji_zanrovi">Dohvati žanrove iz moje baze</button>
+
+    <button id="dodaj_zanr">Dodaj zanr u moju bazu</button>
+
+    <button id="obrisi_zanr">Obriši žanrove bez filmova</button>
+
+
+
+    <br> <br>
+    <label for="ime_zanra">Ažuriraj naziv žanra</label>
+    <input type="text" name="ime_zanra" id="ime_zanra">
+
+    <button id="azuriraj_zanr">Ažuriraj žanr</button>
+
+    <button id="posalji_azurirani_zanr">Pošalji ažurirani žanr</button>
+
+    <div id="info"></div>
+
+    <footer>
+        <a
+        href="http://validator.w3.org/check?uri=https://spider.foi.hr/RWA/2022/zadaca_01/mfriscic20/aplikacija/html/zanrovi.html"
+      >
+        <img class="validacija_css"
+          src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png"
+          width="50"
+          height="35"
+          alt="validator"
+        />
+      </a>
+    </footer>
+
+
+
+    <script src="../js/zanrovi.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<div id="sadrzaj"></div>
+
+
+
+<br>
+        Filter: <input type="text" id="filter" placeholder="Kljucne rijeci" [(ngModel)]="vrijednostFiltera" (keyup)="dajFilmove()"><br>
+
+<table border="1">
+
+    <tr>
+        <th>Id</th>
+        <th>Jezik</th>
+        <th>Naslov original</th>
+        <th>Naslov</th>
+        <th>Opis</th>
+        <th>Poster</th>
+        <th>Datum</th>
+    </tr>
+    <tr *ngFor="let film of poljeFilmova ">
+
+
+
+        <td>{{film.id}}</td>
+
+
+        <td>{{film.original_language}}</td>
+
+        <td>{{film.title}}</td>
+
+        <td>{{film.original_title}}</td>
+
+        <td>{{film.overview}}</td>
+
+        <td> <img width="100" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+              film.poster_path
+            }}" alt="poster" />
+        </td>
+
+        <td>{{film.release_date}}</td>
+
+        <td>
+            <button (click)="dodajUBazu(film.id)">Dodaj u bazu</button>
+        </td>
+
+    </tr>
+
+</table>

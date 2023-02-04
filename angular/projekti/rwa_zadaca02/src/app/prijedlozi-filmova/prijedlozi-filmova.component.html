@@ -1,0 +1,14 @@
+<br><br><br>
+
+<div class="glavni_div">
+<div *ngFor="let film of neodobreni">
+
+    <div *ngIf="film.odobreno!=1">
+        {{film.title}} {{film.id}}
+        <button (click)="odobri(film.id)" id="gumb_odobri">Odobri</button>
+        <button (click)="izbaciIzBaze(film.id)" id="gumb_odbij">Makni iz baze</button>
+    </div>
+</div>
+
+</div>
+

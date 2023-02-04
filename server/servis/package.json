@@ -1,0 +1,16 @@
+{
+  "name": "servis",
+  "version": "1.0.0",
+  "description": "package json za servis",
+  "main": "restServer.js",
+  "scripts": {
+    "start": " node restServer.js ../konfiguracija.csv &",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "servis"
+  ],
+  "author": "Martin Friscic",
+  "license": "GPL-2.0-only"
+  
+}

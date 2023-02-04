@@ -1,0 +1,97 @@
+
+<div *ngIf="isAdmin">
+
+
+    <nav id="nav_dinamicka">
+        <ul>
+          <li>
+            <a routerLink="/pocetna" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Početna</a>
+          </li>
+          <li><a routerLink="/registracija" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Registracija</a></li>
+          <li><a routerLink="/zanrovi" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Žanrovi</a></li>
+          <li><a routerLink="/dokumentacija" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Dokumentacija</a></li>
+      
+          <li><a routerLink="/filmoviPretrazivanje" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Filmovi pretraživanje</a></li>
+      
+          <li><a routerLink="/filmoviPregled" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Filmovi pregled</a></li>
+      
+          <li><a routerLink="/filmoviPrijedlozi" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Filmovi prijedlozi</a></li>
+      
+          <li><a routerLink="/profil" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Profil</a></li>
+      
+              <li><a routerLink="/korisnici" routerLinkActive="active" ariaCurrentWhenActive="page">
+                  Korisnici</a></li>
+      
+          <li><a routerLink="/pocetna" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="odjavi()">
+              Odjava</a></li>
+        </ul>
+      </nav>
+      <router-outlet></router-outlet>
+  </div>
+
+  <div *ngIf="nijeKorisnik">
+
+
+    <nav id="nav_dinamicka">
+        <ul>
+          <li>
+            <a routerLink="/pocetna" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Početna</a>
+          </li>
+          <li><a routerLink="/prijava" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Prijava</a></li>
+          <li><a routerLink="/registracija" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Registracija</a></li>
+
+              <li><a routerLink="/dokumentacija" routerLinkActive="active" ariaCurrentWhenActive="page">
+                Dokumentacija</a></li>
+
+             
+          
+        </ul>
+      </nav>
+      <router-outlet></router-outlet>
+  </div>
+
+
+  <div *ngIf="isUloga2">
+
+    <nav id="nav_dinamicka">
+        <ul>
+          <li>
+            <a routerLink="/pocetna" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Početna</a>
+          </li>
+          
+          
+          <li><a routerLink="/dokumentacija" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Dokumentacija</a></li>
+      
+          <li><a routerLink="/filmoviPretrazivanje" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Filmovi pretraživanje</a></li>
+      
+          <li><a routerLink="/filmoviPregled" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Filmovi pregled</a></li>
+      
+        
+      
+          <li><a routerLink="/profil" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Profil</a></li>
+      
+            
+      
+          <li><a routerLink="/pocetna" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="odjavi()">
+              Odjava</a></li>
+        </ul>
+      </nav>
+      <router-outlet></router-outlet>
+  </div>
+

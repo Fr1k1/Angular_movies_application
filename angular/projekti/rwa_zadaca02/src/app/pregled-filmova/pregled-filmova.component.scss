@@ -1,0 +1,12 @@
+#glavni {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+img {
+  height: 400px;
+  width: 300px;
+  grid-column: span 1;
+  border-radius: 8px;
+}

@@ -1,0 +1,7 @@
+rest.korime=admin
+rest.lozinka=123456
+rest.port=9000
+app.port=4800
+app.broj.stranica=1
+tmdb.apikey.v3=''
+tmdb.apikey.v4=''

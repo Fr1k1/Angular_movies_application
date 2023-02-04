@@ -1,0 +1,494 @@
+<img src="../../assets/slika_mene.jpeg" alt="slika_mene" id="vlastita_slika">
+<ul>
+  <li>Martin Friščić</li>
+
+  <li>mfriscic20@student.foi.hr</li>
+</ul>
+
+<br><br><br><br>
+
+<h3>Tablica REST</h3>
+
+<h3>Žute stvari- djelomično</h3>
+<p>api/filmovi/ ?stranica=broj &brojFilmova=broj [&datum=datum] [&zanr=idZanr] [&naziv=dioNazivFilma]
+   [&sortiraj=[d | z | n]]- GET-> vraća listu određenog broja filmova</p>
+
+   <p>api/filmovi/id PUT-> ažurira samo status filma prema id prilikom odobravanja ili odbijanja</p>
+
+<table id="tablica1">
+  <tr>
+    <th>Resurs parametri</th>
+    <th>GET čitanje</th>
+    <th>POST kreiranje</th>
+    <th>PUT ažuriranje</th>
+    <th>DELETE brisanje</th>
+  </tr>
+
+  <tr>
+    <td>api/korisnici</td>
+    <td>vraća listu korisnika</td>
+    <td>kreira noog korisnika</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>api/korisnici
+      /korime</td>
+    <td>vraća određenog korisnika</td>
+    <td>"metoda nije dopuštena, 405"</td>
+    <td>Ažurira određenog korisnika</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>api/korisnici
+      /korime/aktivacija</td>
+    <td></td>
+    <td>"metoda nije dopuštena, 405"</td>
+    <td>Aktivira novog korisnika</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>api/korisnici
+      /korime/prijava</td>
+    <td></td>
+    <td>Provjerava podatke prijave i vraća je li korisnik uspješno prijavljen</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>api/filmovi/
+      ?stranica=broj
+      &brojFilmova=broj
+      [&datum=datum]
+      [&zanr=idZanr]
+      [&naziv=dioNazivFilma]
+      [&sortiraj=[d | z | n]]</td>
+    <td>vraća listu određenog broja
+      filmova za neku stranicu
+      (broj), opcionalno
+      filtrirano po datumu unosa
+      (datum) i/ili žanru (idZanr)
+      i/ili nazivu filma
+      (dioNazivFilma), te može
+      sortirati uzlazno po
+      datumu (d), nazivu (n) ili
+      žanru (z)</td>
+    <td>Uz dobivene podatke čita sve podatke o filmu s vanjskog servisa i dodaje novi film</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>api/filmovi/id</td>
+    <td>Vraća podatke određenog filma (id)</td>
+    <td>"metoda nije dopuštena (405)"</td>
+    <td>Ažurira podatke određenog filma</td>
+    <td>Briše određeni film</td>
+  </tr>
+
+  <tr>
+    <td>api/zanr/</td>
+    <td>Vraća listu žanrova</td>
+    <td>Dodaje novi žanr</td>
+    <td></td>
+    <td>Briše sve žanrove za koje ne postoji film</td>
+  </tr>
+
+  <tr>
+    <td>api/zanr/id</td>
+    <td>Vraća podatke određenog žanra (id)</td>
+    <td>"metoda nije dopuštena (405)"</td>
+    <td>Ažurira postojeći žanr</td>
+    <td>Briše određeni žanr</td>
+  </tr>
+
+  <tr>
+    <td>api/tmdb/zanr</td>
+    <td>Prosljeđuje listu žanrova koji vrati servis TMDB</td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+  <tr>
+    <td>api/tmdb/filmovi
+      ?kljucaRijec=rijec1
+      [,rijec2]
+      &stranica=broj</td>
+    <td>Prosljeđuje listu filmova koju vrati servis TMDB, a čiji filmovi imaju ključnu riječ ili više njih</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<br><br><br><br>
+
+<!--druga tablica-->
+
+<h3>Tablica APP</h3>
+
+
+
+
+<h3>Crvene stvari u tablici nisu napravljene. Ono što je crne boje je napravljeno</h3>
+
+
+<h3>Napomene:</h3>
+<p>na početnoj se prikazuju filmovi s TMDB, a ne iz moje baze
+  , a žanrovi su iz moje baze</p>
+<p>kod ažuriranja, ne vide se na frontendu odmah ažurirani podaci, ali se ažurira u bazi</p>
+
+<table id="tablica2">
+  <tr>
+    <th>Uloga</th>
+    <th>Stranica/e</th>
+    <th>Opis</th>
+  </tr>
+
+  <tr>
+    <td>Gost</td>
+    <td>Početna</td>
+    <td>Prikazuje popis žanrova u bazi podataka i <span class="nenapravljeni_dio">prikazuje 2 filma za svaki žanr
+      koji postoje u bazi podataka.</span></td>
+  </tr>
+  <tr>
+    <td>Gost</td>
+    <td>Dokumentacija</td>
+    <td>Prikazuje stranicu dokumentacija.html opisanu ranije</td>
+  </tr>
+
+  <tr>
+    <td>Gost</td>
+    <td>Registracija, Prijava, Odjava</td>
+    <td>Gost se može se registrirati kao novi korisnik. Lozinka se u bazu ne smije spremati u čitljivom
+      obliku i treba koristiti sol kod spremanja. Dok se račun ne aktivira nije moguće
+      napraviti prijavu. Kod prijave treba koristiti autentikacija dvije razine prvo lozinka
+      s JWT i nakon toga TOTP. Jednom prijavljeni korisnik može se odjaviti u bilo
+      kojem trenutku.</td>
+  </tr>
+  <tr>
+    <td>Korisnik</td>
+    <td>Profil</td>
+    <td>Vidi svoje podatke (ime, prezime, korisničko ime, e-mail, …) i može ih ažurirati.
+      Korisničko ime i e-mail se ne mogu ažurirati.</td>
+  </tr>
+
+  <tr>
+    <td>Korisnik</td>
+    <td>Filmovi pregled</td>
+    <td>Vidi popis svih filmova koji postoje u bazi, <span class="nenapravljeni_dio">može filmove filtrirati po žanru
+        i/ili
+        datumu unosa. Datumsko filtriranje čita podatke od unesenog datuma do današnjeg
+        datuma. Može uzlazno sortirati filmove po nazivu filma, datumu ili nazivu žanra.</span>
+      Može kliknuti na naziv filma i dobiti sve podatke o filmu.</td>
+  </tr>
+  <tr>
+    <td>Korisnik</td>
+    <td>Film</td>
+    <td>Prikazuje sve podatke o filmu zajedno s posterom <span class="nenapravljeni_dio"> i poveznicom na “Galerija
+        slika”
+        za taj film i podatkom koji korisnik je dodao film u bazu.</span> </td>
+  </tr>
+
+  <tr>
+    <td>Korisnik</td>
+    <td>Filmovi pretraživanje</td>
+    <td>Može upisati ključne riječi po kojima se pretražuju filmovi sa servisa TMDB
+      (preko api/tmdb). <span class="nenapravljeni_dio"> Broj stranica nalazi se u podatku “total_pages”. </span>Ako
+      pronađe
+      film koji mu se sviđa može kliknuti na dodaj u bazu. Film se svim dobivenim
+      podacima dodaje u bazu kao prijedlog, ali čeka odobrenje admina da bude vidljiv u
+      “Filmovi pregled”. Nije potrebno spremati podatke o “production_companies”,
+      “production_countries” i “spoken_languages”. <span class="nenapravljeni_dio">Ako već postoji prijedlog za neki
+        film tada nije moguće kliknuti dodaj u bazu. </span></td>
+  </tr>
+  <tr>
+    <td>Korisnik</td>
+    <td class="crveno">Galerija slika</td>
+    <td class="crveno">Korisnik vidi galeriju slika postavljenih od strane svih korisnika za odabrani film.
+      Može pretraživati galeriju slika po datumu postavljanja slike tako da unese od i/ili
+      do datum. Može kliknuti na sliku te ga se prebacuje na “Film”.</td>
+  </tr>
+
+  <tr>
+    <td>Korisnik</td>
+    <td class="crveno">Slika</td>
+    <td class="crveno">Može postaviti novu sliku (samo jpg, jpeg, png ili gif maksimalne veličine 500KB)
+      za neki film koji postoji u bazi. Slika se sprema fizički na poslužitelj unutar
+      direktorija slike/id_filma/korime. Direktorij označen sa id_filma predstavlja id
+      filma pod kojim je film spremljen u bazi, a direktroij korime je korisničko ime
+      korisnika koji je dodao sliku. Slika se sprema pod nazivom
+      datum_hash.ekstenzija. Datum je datum postavljanja slike u obliku
+      “godina-mjesec-dan”, a hash je generiran na temelju vremena i korisničkog imena.
+      Ekstenzija je originalna ekstenzija prenesene datoteke.</td>
+  </tr>
+
+  <tr>
+    <td>Admin</td>
+    <td>Filmovi prijedlozi</td>
+    <td>Vidi popis filmova koji su poslani kao prijedlog za dodavanje, ako odobri film
+      postaje vidljiv svim korisnicima u pogledu “Filmovi pregled”. <span class="nenapravljeni_dio">Kod odobravanja
+        filma preuzima se slika postera s TMDB koja se sprema lokalno na poslužitelj u
+        direktorij posteri.</span> Ako ne odobri film tada se on briše i može se opet kasnije dati
+      kao prijedlog.</td>
+  </tr>
+
+  <tr>
+    <td>Admin</td>
+    <td>Žanrovi</td>
+    <td>Vidi pregled svih žanrova u bazi podataka, može ažurirati naziv žanra, može
+      obrisati sve žanrove za koje nema filmova u bazi. Može povući listu žanrova s
+      TMDB servisa te može dodati u bazu sve ili samo neke žanrove. Ako pri
+      dodavanju, već postoji neki žanr s istim id-om, tada se takav preskače i uopće se ne
+      šalje zahtjev na servis za dodavanjem. Korisniku se javlja poruka na ekranu koji
+      žanrovi su bili preskočeni jer već postoje.</td>
+  </tr>
+
+
+</table>
+
+<br><br><br>
+
+<h3>Tablica druga zadaća</h3>
+
+
+<h3>Crvene stvari u tablici nisu napravljene. Ono što je crne boje je napravljeno</h3>
+
+<br>
+
+
+<table>
+  <tr>
+    <th>Zadaci</th>
+    <th>Opis</th>
+  </tr>
+  <tr>
+    <td>Zadaci općenito</td>
+    <td>
+
+      1. Na stranicu dokumentacija kreirati tablicu u kojoj jasno pišu resursi iz prvog dijela (REST servis)
+      su napravljene, a koje nisu prema opisu tablice zadaće 1. Ako je nešto napravljeno dijelomično
+      treba to jasno napisati koji dio je napravljen. Ako ovog dijela nema prva aplikacija nosi 0
+      bodova
+      <br><br>
+
+
+      2. Na stranicu dokumentacija kreirati tablicu u kojoj jasno pišu pogledi iz drugog dijela (APP) koji
+      su implementirani, a koje nisu prema opisu tablice zadaće 1. Ako je nešto napravljeno
+      dijelomično treba to jasno napisati koji dio je napravljen. Ako ovog dijela nema druga
+      aplikacija nosi 0 bodova.
+      <br><br>
+
+
+      3. Na stranicu dokumentacija kreirati tablicu po koracima (počevši od zadaci općenito) ovog
+      dokumenta u kojoj jasno pišu elementi opisa 2 zadaće koji su napravljeni, koji nisu. Ako ovog
+      dijela nema prva i druga aplikacija nosi 0 bodova.
+
+      <br><br>
+
+      4. Može se napraviti još jedna tablica sa dodatnim opisima ako se želi nešto naglasiti. Nije
+      obavezno.
+
+      <br><br>
+
+      5. U obje aplikacije složiti package.json tako da se sa npm start može pokrenuti pojedini server.
+      <span class="crveno" class="istakni"> Kod kreiranja start skripte obavezno definirati putanju na NODE_PATH gdje piše putanja do
+        globalnih modula kako je to rađeno na predavanjima i vježbama. Student/ica kod testiranja tada
+        može lako promijeniti tu putanju</span> <p class="istakni">-> ovaj dio se odnosi na LINUX...zadaća je rađena na WINDOWSU!!!- 
+          za testiranje je potrebno napraviti prema ulogama kolege Frica na forumu
+        </p> 
+        
+
+      <br><br>
+
+      <div>
+
+        6. Kod predavanja izbrisati svoje ključeve za TMDB servis iz konfiguracijske datoteke svaki student
+        ubacuje svoje ključeve u datoteku kod testiranja.
+      </div>
+
+
+      <br>
+
+
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>Zadaci REST servis</td>
+    <td>
+
+
+      7. REST servis funkcionalno ostaje isti međutim potrebno je napraviti sljedeće izmjene: <br>
+      a. Da radi sa SQLite bazom podataka <br>
+      b. Da koristi port koji se čita iz konfiguracijske datoteke pod nazivom: rest.port
+      <br><br>
+
+
+
+      8. REST servis može dodatno ima parameter kod resursa api/filmovi koji omogućuje dohvat samo
+      odobrenih ili ne odobrenih filmova. Nije obavezno.
+
+      <br><br>
+
+      <span class="nenapravljeni_dio">
+
+        9. REST servis ne korsiti više username i password već prima JWT i tako validira input. </span> Varijanta sa
+      username i password nosi manje bodova. -> ne prima JWT
+
+
+
+      <br><br>
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>Zadaci Web aplikacija</td>
+    <td>
+      11. Klientski dio Web Aplikacije HTML, CSS i JS na strani klijenta prebaciti u Angular sa
+      TypeScript-om.
+
+      <br><br>
+      12. Informacije o portovima na servise koje koristi Angular aplikacija čita iz environment datoteke.
+      Hard kodirana varijanta nosi manje bodova.
+      <br><br>
+
+      13. Dizajn treba prebaciti korištenjem Sass preprocesora u Sass ili Scss sintaksi. Čisti CSS ili
+      bootstrap varijante nose 0 bodova.
+      <br><br>
+
+      <span class="nenapravljeni_dio">
+
+        14. Dodati reCaptcha v3 sustav na minimalno 3 obrazaca od kojih su obavezni: prijava, registracija i
+        jedan po izboru.
+
+      </span>
+      <br><br>
+
+      15. Pozadinski dio web aplikacije poslužuje Angular web aplikaciju. Moguće je pokretanje angular
+      aplikacije preko live servera sa ng serve, ali ta varijanta nosi manje bodova.
+      <br><br>
+
+      16. Pozadinski dio web aplikacije poslužuje dokumentaciju - moguće je dokumentaciju ugraditi u
+      samu angular aplikaciju.
+      <br><br>
+
+      17. Pozadinski dio web aplikaciije nudi REST api podršku za klijentsku stranu sa resursima koji ne
+      postoje u REST servisu npr. autentifikacija korisnika i generiranje JWT-a.
+      <br><br>
+
+      18. Pozadinski dio port se mora čitati iz konfiguracijske datoteke iz podatka: app.port
+      <br><br>
+
+      19. Izbaciti TOTP i aktivaciju mailom kod prijave. Inicijalno mora postojati korisnik iz svake uloge
+      koji nema TOTP i već je aktiviran i treba navesti podatke na stranici prijava radi lakšeg testiranja.
+      <br><br>
+
+      20. Angular aplikacija smije direktno komunicirati sa REST servisom, <span class="nenapravljeni_dio">ali mora
+        obavezno slati JWT.</span>
+      Varijanta bez JWT-a nosi manje bodova. ->napravljeno bez JWT
+      <br><br>
+
+    </td>
+  </tr>
+</table>
+
+
+<br><br><br>
+
+<h3>Tablica napomene</h3>
+
+
+
+
+<table>
+  <tr>
+    <th>Stranica/e</th>
+    <th>Napomena</th>
+
+  </tr>
+
+  <tr >
+    
+    <td>Općenito</td>
+    <td>Zadaća je pisana na Windowsu pa je potrebno napraviti prema uputama kolege Frica na forumu </td>
+  </tr>
+
+  <tr >
+    
+    <td>Početna</td>
+    <td>Prikazuje samo popis žanrova u bazi, ali ne i filmove za njih </td>
+  </tr>
+  <tr>
+    
+    <td>Dokumentacija</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+  
+    <td> Prijava</td>
+    <td>Detaljnijim testiranjem utvrđeno je da se u slučaju unošenja pogrešnih podataka kod prijave aplikacija ne sruši odmah i moguće se ponovo prijaviti s ispravnim podacima, ali se app server sruši nakon nekog vremena kad istekne header</td>
+  </tr>
+  <tr>
+    
+    <td>Profil</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    
+    <td>Filmovi pregled</td>
+    <td>Nema filtriranja ali se filmovi mogu dodavati i može se vidjeti popis svih odobrenih filmova u bazi</td>
+  </tr>
+  <tr>
+    
+    <td>Film</td>
+    <td>Mogu se vidjeti podaci o samom filmu koje vraća TMDB </td>
+  </tr>
+
+  <tr>
+   
+    <td>Filmovi pretraživanje</td>
+    <td>Nema straničenja, u slučaju dodavanja filma koji već postoji app server se također ruši (nema provjere za to)
+      </td>
+  </tr>
+  <tr>
+    
+    <td >Galerija slika</td>
+    <td >-</td>
+  </tr>
+
+  <tr>
+    
+    <td class="crveno">Slika</td>
+    <td class="crveno">-</td>
+  </tr>
+
+  <tr>
+    
+    <td>Filmovi prijedlozi</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    
+    <td>Žanrovi</td>
+    <td>Ako se pokuša dodati jako puno žanrova odjednom (checbox) onda se ne dodaju</td>
+  </tr>
+
+
+</table>
+
+
+<a
+  href="http://validator.w3.org/check?uri=https://spider.foi.hr/RWA/2022/zadaca_01/mfriscic20/aplikacija/html/dokumentacija.html">
+  <img class="validacija_css" src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png" width="50" height="35"
+    alt="validator" />
+</a>

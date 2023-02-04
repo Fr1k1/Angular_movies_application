@@ -1,0 +1,42 @@
+#gumb_odobri {
+  border-radius: 8px;
+  background-color: #3b71ca;
+  box-shadow: 0 4px 9px -4px #3b71ca;
+  color: #fff;
+  border-style: none;
+  height: 2.5rem;
+
+  &:hover {
+    background-color: #F07DEA;
+  }
+
+  margin-right: 20px;
+  margin-left:10px;
+}
+
+#gumb_odbij {
+  border-radius: 8px;
+  background-color: red;
+  
+  color: #fff;
+  border-style: none;
+  height: 2.5rem;
+
+  &:hover {
+    background-color: #9C254D;
+  }
+}
+
+.glavni_div {
+    text-align: center;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FAFAFA;
+    border-radius: 8px;
+    padding:10px;
+}

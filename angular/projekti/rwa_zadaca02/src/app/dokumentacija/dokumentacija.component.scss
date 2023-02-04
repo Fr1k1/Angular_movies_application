@@ -1,0 +1,63 @@
+#vlastita_slika {
+	margin-top: 2%;
+	width: 25%;
+	height: 600px;
+	border-radius: 8px;
+}
+table {
+	tr {
+		&:nth-child(even) {
+			background-color: #dddddd;
+		}
+		&:nth-child(odd) {
+			background-color: #003459;
+		}
+	}
+	border: 1px solid black;
+}
+#tablica1 {
+	tr {
+		&:nth-child(7) {
+			td {
+				&:nth-of-type(4) {
+					background-color: yellow;
+				}
+			}
+		}
+		&:nth-child(6) {
+			td {
+				&:nth-of-type(2) {
+					background-color: yellow;
+				}
+			}
+		}
+	}
+}
+.posebni_dio {
+	color: green;
+}
+.nenapravljeni_dio {
+	color: red;
+}
+th {
+	border: 1px solid black;
+}
+td {
+	border: 1px solid black;
+}
+
+.crveno {
+	color:red;
+}
+
+.zeleno  {
+	color:green;
+}
+
+.zuto {
+	color:yellow;
+}
+
+.istakni {
+	background-color: yellow;
+}

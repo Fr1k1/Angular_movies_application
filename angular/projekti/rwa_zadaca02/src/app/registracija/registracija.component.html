@@ -1,0 +1,64 @@
+
+<body>
+    <main>
+        <!--<div id="poruka">#poruka#</div>-->
+
+        <div id="javi_gresku"></div>
+        <form action="/registracija" method="POST">
+
+            <h1 class="">Registrirajte se u aplikaciju</h1>
+
+
+            <h6 class="">Ime</h6>
+
+
+            <input type="text" name="ime" id="ime" class="ime_txt" [(ngModel)]="ime" />
+
+
+
+            <h6 class="">Prezime</h6>
+
+
+            <input type="text" name="prezime" id="prezime" class="prezime_txt" [(ngModel)]="prezime" />
+
+
+
+
+            <h6 class=" ">Email</h6>
+
+
+            <input type="email" class="mail_txt" name="email" id="email" [(ngModel)]="email" />
+
+
+
+
+
+            <h6 class="">Korisničko ime</h6>
+
+            <input type="text" name="korime" id="korime" class="korisnicko_txt" [(ngModel)]="korisnicko" />
+
+
+
+            <h6 class="">Lozinka</h6>
+
+
+            <input type="text" name="lozinka" id="lozinka" class="lozinka_txt" [(ngModel)]="lozinka" />
+
+
+
+
+            <input type="submit" value="Registriraj se" id="gumb_register" (click)="registriraj()" />
+
+            <a
+                href="http://validator.w3.org/check?uri=https://spider.foi.hr/RWA/2022/zadaca_01/mfriscic20/aplikacija/html/registracija.html">
+                <img class="validacija_css" src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png" width="50"
+                    height="35" alt="validator" />
+            </a>
+
+
+
+        </form>
+    </main>
+    <footer></footer>
+
+</body>

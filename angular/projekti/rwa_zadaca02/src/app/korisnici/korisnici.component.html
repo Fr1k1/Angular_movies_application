@@ -1,0 +1,13 @@
+
+<div *ngFor="let objekt of varijabla">
+    <input type="radio" name="group" [id]="objekt.id"> {{ objekt.korime }}
+</div>
+
+
+<br><br><br>
+
+
+<button (click)="dohvatiMojeKorisnike()">Dohvati korisnike iz baze</button>
+
+<br><br>
+

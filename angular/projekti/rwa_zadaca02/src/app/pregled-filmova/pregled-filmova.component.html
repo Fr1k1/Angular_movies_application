@@ -1,0 +1,21 @@
+<br><br><br>
+<main></main>
+
+ <div id="glavni">
+
+ <div *ngFor="let film of odobreni">
+
+  <div *ngIf="film.odobreno==1" routerLink="/filmoviPregled/odabraniFilm/{{film.id}}">
+
+    <img width="100" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+      film.poster_path
+    }}" alt="poster" />
+
+    <br><br>
+      {{film.title}} 
+      <br><br>
+     
+  
+  </div>
+</div>
+</div>

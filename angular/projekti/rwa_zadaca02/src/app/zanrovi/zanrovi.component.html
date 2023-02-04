@@ -1,0 +1,39 @@
+
+<h3>Dodaj žanr u moju bazu funkcionira da se odabere neki od checkboxa i stisne se,
+    ako se npr. pokušaju dodati 2 a jedan već postoji onda se javlja poruka
+
+    Ažuriranje naziva žanra funkcionira da se odabere neki žanr iz moje baze(radio buttoni) 
+    i napiše se nova vrijednost u input i stisne se pošalji ažurirani žanr
+</h3>
+
+<div *ngFor="let objekt of varijabla">
+    <input type="radio" name="group" value={{objekt.naziv}} [id]="objekt.id" (change)="dohvatiOznaceneRadio($event, objekt.id)"> {{ objekt.naziv }}
+    
+    
+</div>
+
+<br><br><br>
+
+<div *ngFor="let objekt of varijabla2">
+    <input type="checkbox" name="objekt.name" value={{objekt.name}} id={{objekt.id}}> {{ objekt.name }}
+</div>
+
+
+<button (click)="dohvatiMojeZanrove()">Dohvati žanrove iz baze</button>
+<button (click)="dohvatiTMDBZanrove()">Dohvati žanrove iz TMDB</button>
+
+<button (click)="DodajNoviZanr()">Dodaj žanr u moju bazu</button>
+<button (click)="dohvatiMojeZanroveDelete()">Obriši žanrove bez filmova</button>
+<button (click)="dodatno()">Pošalji ažurirani žanr</button>
+
+<br><br>
+<label for="ime_zanra">Ažuriraj naziv žanra</label>
+<input type="text" name="ime_zanra" id="ime_zanra"
+(change)="dohvatiNoviNaziv($event)"
+
+>
+
+<div id="porukica"></div>
+
+
+
