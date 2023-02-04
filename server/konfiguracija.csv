@@ -3,5 +3,5 @@ rest.lozinka=123456
 rest.port=9000
 app.port=4800
 app.broj.stranica=1
-tmdb.apikey.v3=''
-tmdb.apikey.v4=''
+tmdb.apikey.v3=ffb710fd216bd2fdf6de72672cf96f64
+tmdb.apikey.v4=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZmI3MTBmZDIxNmJkMmZkZjZkZTcyNjcyY2Y5NmY2NCIsInN1YiI6IjYzNDk4ZGM2Njg4Y2QwMDA4MTM0ZThmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bIlR3DaLkEO7zydvwfie6uAjqF49v3W-CUHDQUNSpkA
