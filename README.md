@@ -45,5 +45,17 @@
 
 <h4>App port:4800</h4>
 
+<h2> Some screenshots (still working on design) </h2>
+
+<img src="https://github.com/Fr1k1/Angular_movies_application/blob/master/screenshots/Filmovi_pregled.png">
+
+<br/>
+
+<img src="https://github.com/Fr1k1/Angular_movies_application/blob/master/screenshots/Movie.png">
+
+<br/>
+
+<img src="https://github.com/Fr1k1/Angular_movies_application/blob/master/screenshots/Filmovi_pretrazivanje.png">
+
 
 
